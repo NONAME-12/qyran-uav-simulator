@@ -1,0 +1,22 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+.vs/
+.idea/
+*.csproj
+*.sln
+# Local secrets and respondent identities
+.env
+.env.*
+!*.example
+*.key
+*.pem
+private-interviews/
+private-evidence/
+.DS_Store
+Thumbs.db
