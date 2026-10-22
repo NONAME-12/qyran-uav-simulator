@@ -1,43 +1,35 @@
-# Qyran UAV Control Simulator
+# Qyran UAV Simulator
 
-**Diploma:** Development of a UAV Control Simulator in Unity Using an External Remote Controller  
+**Diploma title:** Development of a UAV Control Simulator in Unity Using an External Remote Controller
+
 **Program:** Software Engineering, SE-2404  
-**Team:** Nurkhan Orazbay — external RC integration, channel mapping, flight-control logic, telemetry; Dauren Zheksenov — Unity simulation, quadrotor dynamics, cameras, training scenes.  
-**Supervisor:** Zarina Almaбековна Kutpanova.
+**Team:** Nurkhan Orazbay — RC-controller input and flight-control software; Dauren Zheksenov — Unity simulation environment and quadrotor physics  
+**Supervisor:** Zarina Al'mabekovna Kutpanova
 
-**GitHub:** https://github.com/NONAME-12/qyran-uav-simulator  
-**YouTrack:** https://qyran-uav-simulator.youtrack.cloud/agiles/204-1/current
+## Problem and purpose
+Physical quadrotor flight training involves hardware cost, risk and suitable operating conditions. The project develops an inspectable desktop simulator where a physical RC controller can feed calibrated commands into a simplified quadrotor model and training scenario. Target users include drone students, beginner FPV pilots and educators. The diploma deliverable is a **Unity software simulator**; controlling real aircraft is outside its required scope.
 
-## Project overview
-Qyran is a research-oriented desktop training simulator for one quadrotor. The design separates device input, calibration and mapping, flight-control commands, six-degree-of-freedom dynamics, rendering, exercise logic, and telemetry. The diploma deliverable is **software and simulation**; real aircraft integration is outside the required scope.
+## Deliverables for the first pre-defense
+- [One structured pre-defense report covering all 11 required components](docs/PreDefense_1.md)
+- [System Context diagram](diagrams/01_context.svg), [Use Case diagram](diagrams/02_use_cases.svg), [Component diagram](diagrams/03_components.svg), each with editable `.dot` source
+- [Independent RC-input diagnostics demonstrator](prototype/rc-diagnostics/index.html), with [automated channel-math tests](prototype/rc-diagnostics/control_math.test.js)
+- Example [controller profile](config/controller-profile.example.json)
 
-## First checkpoint: 22–24 October 2026
-The repository contains the project proposal, critical scientific review (13 scientific works), a comparison of four existing simulators, architectural decisions, FR/NFR requirements, three editable diagrams, user-interface prototype, verification protocol, risk register, and YouTrack task specifications. A small independent browser-based RC input diagnostics demonstrator and automated mathematics tests are also supplied.
+## Technologies
+Planned final implementation: **Unity / C#**, Unity Input System or a compatible adapter, Rigidbody-based 6-DoF physics, JSON configuration and CSV telemetry. The current technical proof of concept uses HTML/JavaScript and is **not** the finished Unity build.
 
-These are **completed analysis/design artifacts**. Hardware RC compatibility, a compiled Unity application, interviews with external respondents, and supervisor approval are **not represented as completed tests**. See [checkpoint status](docs/12_checkpoint_status.md) for exact boundaries.
+## Project links and progress
+- [GitHub source repository](https://github.com/NONAME-12/qyran-uav-simulator)
+- [YouTrack Kanban with 15 assigned issues](https://qyran-uav-simulator.youtrack.cloud/agiles/204-1/current)
 
-## Read these files
-- [Project proposal](docs/01_project_proposal.md)
-- [Evidence and user research](docs/02_relevance_evidence.md)
-- [Scientific literature review](docs/03_literature_review.md)
-- [Existing simulator comparison](docs/04_existing_simulators.md)
-- [Technology choices](docs/05_technology_decisions.md)
-- [Software requirements](docs/06_requirements.md)
-- [Architecture](docs/07_architecture.md)
-- [UX and prototype](docs/08_prototype.md)
-- [Verification protocol](docs/09_verification_plan.md)
-- [Project management](docs/10_project_management.md)
-- [Supervisor review register](docs/11_supervisor_feedback.md)
-- [Checkpoint status](docs/12_checkpoint_status.md)
-- [YouTrack issue specifications](youtrack/issue_specs.md)
+On 22 Oct 2026 the design/research materials and browser diagnostics are available. Hardware transmitter input, Unity integration, real interviews and substantive supervisor review are not yet evidenced. YouTrack is the source of truth for current issue statuses; this README is not a second task board.
 
-## Demonstrator
-Open `prototype/rc-diagnostics/index.html` in Chrome/Edge. Simulated input mode works without RC hardware; browser Gamepad API mode requires a supported USB joystick device. This is a **separate technical proof of concept, not Unity integration or flight validation**.
+## Run and test the existing prototype
+Open `prototype/rc-diagnostics/index.html` in Chrome/Edge. The **Simulated** mode runs without a controller; the optional browser Gamepad mode depends on USB-compatible hardware.
 
-Run mathematical processing checks with Node.js:
-```sh
+If Node.js is available, test the mathematical mappings:
+```shell
 node --test prototype/rc-diagnostics/control_math.test.js
 ```
 
-## Development and assessment
-One shared repository. Each student commits from their own GitHub account. Create task branches using **real** YouTrack issue IDs, attach commit/PR links, and request teammate review. A task moves to Done only after the stated acceptance criteria have actually been checked.
+The full Unity application is a later development milestone. Do not interpret browser input diagnostics as evidence of flight physics or actual transmitter integration.
