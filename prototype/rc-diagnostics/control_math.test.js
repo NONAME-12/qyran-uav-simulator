@@ -1,0 +1,13 @@
+'use strict';const {test}=require('node:test'),assert=require('node:assert/strict');const M=require('./control_math.js');
+test('center zero',()=>assert.equal(M.normalize(0),0));
+test('bipolar endpoints',()=>{assert.equal(M.normalize(-1),-1);assert.equal(M.normalize(1),1)});
+test('positive half',()=>assert.equal(M.normalize(.5),.5));
+test('negative half',()=>assert.equal(M.normalize(-.5),-.5));
+test('reverse axis',()=>assert.equal(M.normalize(.4,{reverse:true}),-.4));
+test('throttle zero',()=>assert.equal(M.normalize(-1,{kind:'throttle'}),0));
+test('throttle full',()=>assert.equal(M.normalize(1,{kind:'throttle'}),1));
+test('throttle reverse',()=>assert.equal(M.normalize(-1,{kind:'throttle',reverse:true}),1));
+test('deadzone zeros',()=>assert.equal(M.normalize(.03,{deadzone:.05}),0));
+test('expo responds',()=>assert.ok(M.normalize(.5,{expo:1})<M.normalize(.5,{expo:0})));
+test('clamps high',()=>assert.equal(M.normalize(2),1));
+test('rejects invalid',()=>assert.throws(()=>M.normalize(.2,{min:0,center:0,max:1})));

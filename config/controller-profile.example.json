@@ -1,0 +1,35 @@
+{
+  "name": "example-only",
+  "type": "USB-gamepad",
+  "channels": {
+    "roll": {
+      "axis": 0,
+      "reverse": false,
+      "min": -1,
+      "center": 0,
+      "max": 1
+    },
+    "pitch": {
+      "axis": 1,
+      "reverse": false,
+      "min": -1,
+      "center": 0,
+      "max": 1
+    },
+    "yaw": {
+      "axis": 2,
+      "reverse": false,
+      "min": -1,
+      "center": 0,
+      "max": 1
+    },
+    "throttle": {
+      "axis": 3,
+      "reverse": false,
+      "min": -1,
+      "max": 1
+    }
+  },
+  "deadzone": 0.05,
+  "expo": 0.25
+}

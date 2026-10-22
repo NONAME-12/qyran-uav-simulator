@@ -1,0 +1,1 @@
+digraph UseCases {graph [label="Qyran — Use cases",labelloc=t]; node[shape=ellipse]; actor[shape=box,label="Pilot"]; a[label="Detect RC device"]; b[label="Map and calibrate axes"]; c[label="Configure UAV"]; d[label="Select and start training"]; e[label="Fly virtual UAV"]; f[label="Switch FPV / third-person"]; g[label="Export session telemetry"]; actor->{a b c d e f g};}

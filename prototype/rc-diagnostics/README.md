@@ -1,0 +1,2 @@
+# Qyran RC Input Diagnostics
+A standalone HTML + JavaScript prototype for four RC channels: roll/pitch/yaw [-1,1] and throttle [0,1], axis mapping, reverse, deadzone and expo. It has a simulated mode and optionally uses browser Gamepad API. This does **not** prove compatibility with a physical transmitter or integrate with Unity. Open index.html in Chrome or Edge. Tests: `node --test prototype/rc-diagnostics/control_math.test.js`.
