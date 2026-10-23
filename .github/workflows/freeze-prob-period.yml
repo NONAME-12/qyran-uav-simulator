@@ -1,0 +1,21 @@
+name: Freeze probationary submission
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/freeze-prob-period.yml'
+permissions:
+  contents: write
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create prob-period-1 tag at submission commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api repos/${{ github.repository }}/git/ref/tags/prob-period-1 --silent >/dev/null 2>&1; then
+            echo "Submission tag already exists; leaving it unchanged."
+            exit 0
+          fi
+          gh api -X POST repos/${{ github.repository }}/git/refs -f ref=refs/tags/prob-period-1 -f sha=${{ github.sha }}
