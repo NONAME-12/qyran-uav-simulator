@@ -1,0 +1,6 @@
+{
+  "name": "Qyran.Runtime",
+  "rootNamespace": "Qyran",
+  "references": ["Unity.InputSystem"],
+  "autoReferenced": true
+}

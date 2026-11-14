@@ -1,0 +1,6 @@
+{
+  "name": "Qyran.Editor",
+  "rootNamespace": "Qyran.Editor",
+  "references": ["Qyran.Runtime", "Unity.InputSystem"],
+  "includePlatforms": ["Editor"]
+}

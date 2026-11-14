@@ -1,0 +1,7 @@
+{
+  "name": "Qyran.PlayModeTests",
+  "rootNamespace": "Qyran.Tests",
+  "references": ["Qyran.Runtime", "Unity.InputSystem", "Unity.InputSystem.TestFramework"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

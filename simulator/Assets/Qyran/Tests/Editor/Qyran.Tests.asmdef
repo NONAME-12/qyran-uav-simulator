@@ -1,0 +1,8 @@
+{
+  "name": "Qyran.Tests",
+  "rootNamespace": "Qyran.Tests",
+  "references": ["Qyran.Runtime", "Unity.InputSystem"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}
